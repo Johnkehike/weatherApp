@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main" id="main">
+        <div class="nav" id="nav">
+            <div id="sky-group" class="sky-group">
+                <div class="menu-item" id="menu-item">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="sky-cast" id="sky-cast">
+                    <h4>SkyCast</h4>
+                </div>
+            </div>
+            <div class="location-print-text" id="location-print-text">
+                <i class="fa-solid fa-location-dot"></i>
+                <p id="fullname">Khulna, Bangladesh</p>
+            </div>
+            <form action="submit" class="location-input" id="location-input">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="location" placeholder="search location" list="suggestions">
+                <datalist id="suggestions"></datalist>
+                <div id="map"></div>
+                <div id="infowindow-content">
+                  <span id="place-name" class="title"></span><br />
+                  <span id="place-address"></span>
+                </div>
+                <i class="fa-solid fa-location-crosshairs" type="submit"></i>
+              </form>
+
+            <button class="light" id="light" data-action="turn-white">
+                <i class="fa-solid fa-sun"></i>
+                Light
+            </button>
+
+            <div id="notify-settings" class="notify-settings">
+                <div class="notify" id="notify">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+                <div class="settings" id="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+            </div>
+            <div class="profile" id="profile">
+                <div class="profile-image" id="profile-image">
+                    <img src="./assets/profile.jpg" alt="">
+                </div>
+                <div class="profile-name" id="profile-name">
+                    <h5>Wow Rakibul</h5>
+                </div>
+                <div class="down-arrow" id="down-arrow">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="body" id="body">
+            <div class="left" id="left">
+                <div class="hero" id="hero">
+                    <div class="current-report" id="current-report">
+                        <div class="text" id="text">
+                            <p>Current Weather</p>
+                            <h2 id="current-time">2:59PM</h2>
+                        </div>
+                        <div class="si" id="si">
+                            <p>Celcius</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </div>                   
+                    <div class="degree" id="degree">
+                        <div class="degree-one" id="degree-one">
+                            <div class="degree-image" id="degree-image">
+                                <!-- <img alt="" id="icon"> -->
+                            </div>
+                            <div class="degree-text" id="degree-text">
+                                <h1 id="temperature">12 <sup>&deg;C</sup> </h1> 
+                            </div>
+                        </div>
+                        <div class="rainy-report" id="rainy-report">
+                            <a href="#" id="description">Rainy</a>
+                            <p id="feeling">Feels like 35&deg;</p>
+                        </div>
+                    </div>
+                    <div class="description-text" id="description-text">
+                        <p id="description-p">There will be mostly sunny skies. The high will be 35&deg;</p>
+                    </div>
+                </div>
+
+
+                <div class="report-dashboard" id="report-dashboard">
+                    <div class="air" id="air">
+                        <div class="symbol" id="symbol">
+                            <i class="fa-solid fa-smog"></i>
+                        </div>
+                        <div class="air-text" id="air-text">
+                            <div class="text-air" id="text-air">
+                                <p>Air Quality</p>
+                            </div>
+                            <div class="measurement" id="measurement">
+                                <h3>158</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="air" id="air">
+                        <div class="symbol" id="symbol">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+                        <div class="air-text" id="air-text">
+                            <div class="text-air" id="text-air">
+                                <p >Wind</p>
+                            </div>
+                            <div class="measurement" id="measurement">
+                                <h3 id="wind-report">1 mph</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="air" id="air">
+                        <div class="symbol" id="symbol">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div class="air-text" id="air-text">
+                            <div class="text-air" id="text-air">
+                                <p>Humidity</p>
+                            </div>
+                            <div class="measurement" id="measurement">
+                                <h3 id="humidity-report">54%</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="air" id="air">
+                        <div class="symbol" id="symbol">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div class="air-text" id="air-text">
+                            <div class="text-air" id="text-air">
+                                <p>Visibility</p>
+                            </div>
+                            <div class="measurement" id="measurement">
+                                <h3 id="visible-report">3 mi</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="air" id="air">
+                        <div class="symbol" id="symbol">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div class="air-text" id="air-text">
+                            <div class="text-air" id="text-air">
+                                <p>Precip</p>
+                            </div>
+                            <div class="measurement" id="measurement">
+                                <h3 id="precip-report">27.65 in</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="air" id="air">
+                        <div class="symbol" id="symbol">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div class="air-text" id="air-text">
+                            <div class="text-air" id="text-air">
+                                <p>Pressure</p>
+                            </div>
+                            <div class="measurement" id="measurement">
+                                <h3 id="pressure-report">66&deg;</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="final-dashboard" id="final-dashboard">
+                    <div class="final-text" id="final-text">
+                        <p>Sun & Moon Summary</p>
+                    </div>
+                    <div class="final-bottom-side" id="final-bottom-side">                    
+                    <div class="final-air-quality" id="final-air-quality">
+                        <div class="quality-air" id="quality-air">
+                            <div class="air-image" id="air-image">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <div class="final-air-quality-text" id="final-air-quality-text">
+                                <div class="final-air-quality-text-first" id="final-air-quality-text">
+                                    <p>Air Quality</p>
+                                </div>
+                                <div class="final-air-quality-text-second" id="final-air-quality-text-second">
+                                    <p>156</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quality-air" id="quality-air">
+                            <div class="air-image" id="air-image">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <div class="final-air-quality-text" id="final-air-quality-text">
+                                <div class="final-air-quality-text-first" id="final-air-quality-text">
+                                    <p>Air Quality</p>
+                                </div>
+                                <div class="final-air-quality-text-second" id="final-air-quality-text-second">
+                                    <p>156</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="final" id="final">
+                        <div class="final-top" id="final-top">
+                        <div class="final-top-sunrise" id="final-top-sunrise">
+                            <div class="sun" id="sun">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <div class="sunrise-text" id="sunrise-text">
+                                <p>Sunrise</p>
+                            </div>
+                            <div class="sun-time" id="sun-time">
+                                <p>5:43AM</p>
+                            </div>                            
+                        </div>
+                        <div class="rating" id="rating">
+                            <!-- drawing for this work -->
+                        </div>
+                        <div class="final-top-sunrise" id="final-top-sunrise">
+                            <div class="sun" id="sun">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <div class="sunrise-text" id="sunrise-text">
+                                <p>Sunrise</p>
+                            </div>
+                            <div class="sun-time" id="sun-time">
+                                <p>5:43AM</p>
+                            </div>                            
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="final-top" id="final-top">
+                        <div class="final-top-sunrise" id="final-top-sunrise">
+                            <div class="sun" id="sun">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <div class="sunrise-text" id="sunrise-text">
+                                <p>Sunrise</p>
+                            </div>
+                            <div class="sun-time" id="sun-time">
+                                <p>5:43AM</p>
+                            </div>                            
+                        </div>
+                        <div class="rating" id="rating">
+                            <!-- drawing for this work -->
+                        </div>
+                        <div class="final-top-sunrise" id="final-top-sunrise">
+                            <div class="sun" id="sun">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <div class="sunrise-text" id="sunrise-text">
+                                <p>Sunrise</p>
+                            </div>
+                            <div class="sun-time" id="sun-time">
+                                <p>5:43AM</p>
+                            </div>                            
+                        </div>
+                    </div>
+
+
+                    </div>
+
+
+                </div>
+                </div>
+            </div>
+
+            <div class="right" id="right">
+                <div class="top" id="top">
+                    <div class="days" id="days">
+                        <div class="today" id="today">
+                            <button>Today</button>
+                        </div>
+                        <div class="tomorrow" id="tomorrow">
+                            <button>Tomorrow</button>
+                        </div>
+                        <div class="moredays" id="moredays">
+                            <button>10 Days</button>
+                        </div>
+                    </div>
+                    <div class="monthly" id="monthly">
+                        <button>See Monthly Cast</button>
+                    </div>
+                </div>
+
+
+                <div class="down" id="down">
+                    <div class="each-item" id="each-item">
+                        <div id="cloud" class="cloud">
+                            <div class="cloud-image" id="cloud-image">
+                                <!-- <img  src="./assets/" alt=""> -->
+                            </div>
+                            <div class="cloud-time" id="cloud-time">
+                                <div class="time" id="time">
+                                    <p id="one">1AM</p>
+                                </div>
+                                <div class="cloud-state" id="cloud-state">
+                                    <p id="state-cloud">Mostly Cloudy</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="degree-cloud" class="degree-cloud">
+                            <div class="cloud-degree" id="cloud-degree">
+                                <p id="temperature-two">12</p><sup>&deg;c</sup>
+                            </div>
+                            <div class="cloudy-wind" id="cloudy-wind">
+                                <div class="wind-cloud" id="wind-cloud">
+                                    <p id="wind-two">Wind: 120km</p>
+                                </div>
+                                <div class="wind-humidity" id="wind-humidity">
+                                    <p id="humidity-two">Humidity: 59%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="each-item" id="each-item">
+                        <div id="cloud" class="cloud">
+                            <div class="cloud-image" id="cloud-image">
+                                <!-- <img  src="./assets/" alt=""> -->
+                            </div>
+                            <div class="cloud-time" id="cloud-time">
+                                <div class="time" id="time">
+                                    <p id="one">1AM</p>
+                                </div>
+                                <div class="cloud-state" id="cloud-state">
+                                    <p id="state-cloud">Mostly Cloudy</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="degree-cloud" class="degree-cloud">
+                            <div class="cloud-degree" id="cloud-degree">
+                                <p id="temperature-two">12</p><sup>&deg;c</sup>
+                            </div>
+                            <div class="cloudy-wind" id="cloudy-wind">
+                                <div class="wind-cloud" id="wind-cloud">
+                                    <p id="wind-two">Wind: 120km</p>
+                                </div>
+                                <div class="wind-humidity" id="wind-humidity">
+                                    <p id="humidity-two">Humidity: 59%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="each-item" id="each-item">
+                        <div id="cloud" class="cloud">
+                            <div class="cloud-image" id="cloud-image">
+                                <!-- <img  src="./assets/" alt=""> -->
+                            </div>
+                            <div class="cloud-time" id="cloud-time">
+                                <div class="time" id="time">
+                                    <p id="one">1AM</p>
+                                </div>
+                                <div class="cloud-state" id="cloud-state">
+                                    <p id="state-cloud">Mostly Cloudy</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="degree-cloud" class="degree-cloud">
+                            <div class="cloud-degree" id="cloud-degree">
+                                <p id="temperature-two">12</p><sup>&deg;c</sup>
+                            </div>
+                            <div class="cloudy-wind" id="cloudy-wind">
+                                <div class="wind-cloud" id="wind-cloud">
+                                    <p id="wind-two">Wind: 120km</p>
+                                </div>
+                                <div class="wind-humidity" id="wind-humidity">
+                                    <p id="humidity-two">Humidity: 59%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="each-item" id="each-item">
+                        <div id="cloud" class="cloud">
+                            <div class="cloud-image" id="cloud-image">
+                                <!-- <img  src="./assets/" alt=""> -->
+                            </div>
+                            <div class="cloud-time" id="cloud-time">
+                                <div class="time" id="time">
+                                    <p id="one">1AM</p>
+                                </div>
+                                <div class="cloud-state" id="cloud-state">
+                                    <p id="state-cloud">Mostly Cloudy</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="degree-cloud" class="degree-cloud">
+                            <div class="cloud-degree" id="cloud-degree">
+                                <p id="temperature-two">12</p><sup>&deg;c</sup>
+                            </div>
+                            <div class="cloudy-wind" id="cloudy-wind">
+                                <div class="wind-cloud" id="wind-cloud">
+                                    <p id="wind-two">Wind: 120km</p>
+                                </div>
+                                <div class="wind-humidity" id="wind-humidity">
+                                    <p id="humidity-two">Humidity: 59%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/9125c408bc.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgL4mOjxY8HNRQxsVrpiZsERPqxsD243k&libraries=places"></script>
+    <script>
+      function initialize() {
+        var options = {
+          types: ['(cities)'],
+          componentRestrictions: {
+            country: "us"
+          }
+        };
+  
+        var input = document.getElementById('location');
+        var autocomplete = new google.maps.places.Autocomplete(input, options);
+      }
+  
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script> AIzaSyBgL4mOjxY8HNRQxsVrpiZsERPqxsD243k   -->
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places&v=weekly"
+    defer
+  ></script>
+    <script src="search.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
