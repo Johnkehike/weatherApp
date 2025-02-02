@@ -192,7 +192,7 @@ function handlePrints(handlePrints){
     
     
     console.log(handlePrints);
-
+    // console.log(handlePrints.current.feelsLike)
 
 
 
