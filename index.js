@@ -62,7 +62,7 @@ function submitForm(event){
 //http://localhost:7071/api/submitForm
     // fetch(`https://jokeh.azurewebsites.net/api/submitForm?city=${encodeURIComponent(city)}`)
     // fetch(`http://localhost:7071/api/submitForm?city=${encodeURIComponent(city)}`)
-    fetch(`https://jokeh.azurewebsites.net/api/submitForm?city=${city}`)
+    fetch(`https://jokehi.azurewebsites.net/api/submitForm?city=${city}`)
     .then(response => response.json())
     .then(data => {
       // Use data.weatherstack and data.openweather
