@@ -55,6 +55,69 @@ body{
 
 
 }
+/*dark theme*/
+.nav-c{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    /* padding: 1rem; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1.2rem;
+}
+.fa-bars-c{
+    color: #606974;
+}
+.profilenaming-c{
+    color: #505867;
+}
+.fa-angle-down-c{
+    color: #505867;
+}
+.left-c{
+    color: #505867;
+    flex: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.hero-c{
+    background-color: white;
+}
+.pweather-c{
+    color: #505867;
+}
+.current-time-c{
+    color: #505867;
+}
+.temperature-c{
+    color: #505867;
+}
+.description-c{
+    color: #505867;
+}
+.feeling-c{
+    color: #505867;
+}
+.fa-smog{
+    color: #505867;
+}
+.button-c{
+    color: #505867;
+}
+.color-dark{
+    color: #505867;
+}
+
+.final-top-c{
+    color: #505867;
+}
 .sky-group{
     display: flex;
     column-gap: 2rem;
@@ -229,8 +292,7 @@ body{
     color: #0C101D;
     font-size: 0.9rem;
     cursor: pointer;
-    display: flex
-;
+    display: flex;
     column-gap: 0.3rem;
     align-items: baseline;
 }

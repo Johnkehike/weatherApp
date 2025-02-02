@@ -3,25 +3,88 @@
 let form = document.getElementById('location-input');
 let input = document.getElementById('location');
 let datalist = document.getElementById('suggestions');
-const api = "170f9d306b8b1fff0fa64a3d4b8708c7";
-const api2 = `420708b7232891c1b664d5c6df59df36`;
+// const api = "170f9d306b8b1fff0fa64a3d4b8708c7";
+// const api2 = `420708b7232891c1b664d5c6df59df36`;
 let button = document.getElementById('light');
+let mode = 0;
 
-button.addEventListener('click', event => {
 let main = document.getElementById('main');
 let body = document.getElementsByTagName('body');
 let nav = document.getElementById('nav');
+let faBars = document.getElementById('fa-bars');
+let profileNaming = document.getElementById('profilenaming');
+let faAngleDown = document.getElementById('fa-angle-down');
+let pweather = document.getElementById('pweather');
+let hero = document.getElementById('hero');
+let currentTiming = document.getElementById('current-time');
+let airQuality = document.getElementById('air-quality');
+let measureentId =document.getElementById('measurement-id')
+let faWind = document.getElementById('fa-wind');
+let pTextAir = document.getElementById('ptextair')
+let faEye = document.getElementById('fa-eye')
 
-if (main.classList.contains === 'main') {
-    main.classList.remove('main');
-    main.classList.add('main-c');
-
-}else{
-
-}
+// button.addEventListener('click', event => {
 
 
-})
+
+
+//     if (mode === 0 ) {
+//         document.body.classList.add('body-c')
+//         main.classList.remove('main')
+//         main.classList.add('main-c')
+//         nav.classList.remove('nav');
+//         nav.classList.add('nav-c')
+//         profileNaming.classList.add('profilenaming-c')
+        
+//         faAngleDown.classList.add('fa-angle-down-c')
+        
+//         faBars.classList.add('fa-bars-c')
+
+//         hero.style.background='white'
+//         pweather.classList.add('pweather-c')
+//         currentTiming.classList.add('current-time-c')
+//         console.log(pweather);
+//         temperature.classList.add('temperature-c')
+//         description.classList.add('description-c')
+//         feeling.classList.add('feeling-c')
+//         button.classList.add('button-c')
+//         airQuality.classList.add('color-dark')
+//         measureentId.classList.add('color-dark')
+//         faWind.classList.add('color-dark')
+//         pTextAir.classList.add('color-dark')
+//         windValue.classList.add('color-dark')
+//         faEye.classList.add('color-dark')
+        
+//         mode = 1
+//     }else{
+//         document.body.classList.remove('body-c')
+//         main.classList.remove('main-c')
+//         main.classList.add('main')
+//         nav.classList.remove('nav-c');
+//         nav.classList.add('nav')
+//         profileNaming.classList.remove('profilenaming-c')
+//         faAngleDown.classList.remove('fa-angle-down-c')
+        
+//         faBars.classList.remove('fa-bars-c');
+        
+//         hero.style.background=''
+//         pweather.classList.remove('pweather-c')
+//         currentTiming.classList.remove('current-time-c')
+//         temperature.classList.remove('temperature-c')
+//         description.classList.remove('description-c')
+//         feeling.classList.remove('feeling-c')
+//         button.classList.remove('button-c')
+//         airQuality.classList.remove('color-dark')
+//         measureentId.classList.remove('color-dark')
+//         faWind.classList.remove('color-dark')
+//         pTextAir.classList.remove('color-dark')
+//         windValue.classList.remove('color-dark')
+//         faEye.classList.remove('color-dark')
+//         mode = 0
+//     }
+
+
+// })
 
 let cityObj = '';
 let myArray = [];
@@ -30,11 +93,17 @@ form.addEventListener('submit', (event) => {
     event.preventDefault(); 
   
 
-    cityObj = input.value;
-    submitForm();
+    // cityObj = input.value;
+    // submitForm();
     
   });
-  
+
+input.addEventListener('change', (event) =>{
+    event.preventDefault()
+
+    cityObj = input.value;
+    submitForm();
+})
 
 
 function submitForm(event){
