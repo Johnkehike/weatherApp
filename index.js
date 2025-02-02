@@ -86,6 +86,25 @@ let faEye = document.getElementById('fa-eye')
 
 // })
 
+// function handleApiKeyResponse() {
+//     const apiKey = 'AIzaSyBgL4mOjxY8HNRQxsVrpiZsERPqxsD243k'; // Assuming the function returns the API key in the response body
+
+//     // Use the retrieved API key in your Google Maps JavaScript API call
+//     const script = document.createElement('script');
+//     script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=places&v=weekly`;
+//     document.head.appendChild(script);
+// }
+
+// handleApiKeyResponse();
+
+// // Fetch API key from your Cloud Function
+// fetch('https://<your-function-endpoint>/<your-function-name>')
+//   .then(response => response.json())
+//   .then(handleApiKeyResponse)
+//   .catch(error => {
+//     console.error('Error fetching API key:', error);
+//   });
+
 let cityObj = '';
 let myArray = [];
 
