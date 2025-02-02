@@ -3,25 +3,23 @@
 let form = document.getElementById('location-input');
 let input = document.getElementById('location');
 let datalist = document.getElementById('suggestions');
-// const api = "170f9d306b8b1fff0fa64a3d4b8708c7";
-// const api2 = `420708b7232891c1b664d5c6df59df36`;
-let button = document.getElementById('light');
-let mode = 0;
+// let button = document.getElementById('light');
+// let mode = 0;
 
-let main = document.getElementById('main');
-let body = document.getElementsByTagName('body');
-let nav = document.getElementById('nav');
-let faBars = document.getElementById('fa-bars');
-let profileNaming = document.getElementById('profilenaming');
-let faAngleDown = document.getElementById('fa-angle-down');
-let pweather = document.getElementById('pweather');
-let hero = document.getElementById('hero');
-let currentTiming = document.getElementById('current-time');
-let airQuality = document.getElementById('air-quality');
-let measureentId =document.getElementById('measurement-id')
-let faWind = document.getElementById('fa-wind');
-let pTextAir = document.getElementById('ptextair')
-let faEye = document.getElementById('fa-eye')
+// let main = document.getElementById('main');
+// let body = document.getElementsByTagName('body');
+// let nav = document.getElementById('nav');
+// let faBars = document.getElementById('fa-bars');
+// let profileNaming = document.getElementById('profilenaming');
+// let faAngleDown = document.getElementById('fa-angle-down');
+// let pweather = document.getElementById('pweather');
+// let hero = document.getElementById('hero');
+// let currentTiming = document.getElementById('current-time');
+// let airQuality = document.getElementById('air-quality');
+// let measureentId =document.getElementById('measurement-id')
+// let faWind = document.getElementById('fa-wind');
+// let pTextAir = document.getElementById('ptextair')
+// let faEye = document.getElementById('fa-eye')
 
 // button.addEventListener('click', event => {
 
@@ -86,16 +84,16 @@ let faEye = document.getElementById('fa-eye')
 
 // })
 
-// function handleApiKeyResponse() {
-//     const apiKey = 'AIzaSyBgL4mOjxY8HNRQxsVrpiZsERPqxsD243k'; // Assuming the function returns the API key in the response body
+function handleApiKeyResponse() {
+    const apiKey = 'AIzaSyBgL4mOjxY8HNRQxsVrpiZsERPqxsD243k'; 
 
-//     // Use the retrieved API key in your Google Maps JavaScript API call
-//     const script = document.createElement('script');
-//     script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=places&v=weekly`;
-//     document.head.appendChild(script);
-// }
+    
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=places&v=weekly`;
+    document.head.appendChild(script);
+}
 
-// handleApiKeyResponse();
+handleApiKeyResponse();
 
 // // Fetch API key from your Cloud Function
 // fetch('https://<your-function-endpoint>/<your-function-name>')
@@ -112,8 +110,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault(); 
   
 
-    // cityObj = input.value;
-    // submitForm();
+   
     
   });
 
@@ -128,39 +125,17 @@ input.addEventListener('change', (event) =>{
 function submitForm(event){
 
     myArray = cityObj.split(',');
-    // console.log(address);
+    
     let city = myArray[0];
 
-    // city = input.value;
-    
-
-
-    // let endPointForWeatherStack = `http://api.weatherstack.com/current?access_key=${api2}&query=${city}`;
-    // let endPoint = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${api}`;
-
-    // let weatherEndpoint = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`
-
-    // fetch(endPointForWeatherStack).then((data) => {
-    //     return data.json();
-    // }).then((returnedData)=>{
-    //     cityObj = returnedData;
-    //     handlePrints(cityObj);
-        
-    // })
-//http://localhost:7071/api/submitForm
-    // fetch(`https://jokeh.azurewebsites.net/api/submitForm?city=${encodeURIComponent(city)}`)
-    // fetch(`http://localhost:7071/api/submitForm?city=${encodeURIComponent(city)}`)
+   
     fetch(`https://jokehi.azurewebsites.net/api/submitForm?city=${city}`)
     .then(response => response.json())
     .then(data => {
-      // Use data.weatherstack and data.openweather
+     
       handlePrints(data.weatherstack);
     });
 
-//     let url = `https://jokeh.azurewebsites.net/api/HttpTrigger1?city=${city}`;
-//       fetch(url)
-//   .then(response => response.json())
-//   .then(data => console.log(data));
 
     form.reset();
 
@@ -192,11 +167,7 @@ function handlePrints(handlePrints){
     
     
     console.log(handlePrints);
-    // console.log(handlePrints.current.feelsLike)
 
-
-
-    // let cityName = handlePrints.location.name;
     let cityName = cityObj
     let feelsLike = `Feels like ${handlePrints.current.feelslike}`; 
     let description = handlePrints.current.weather_descriptions[0]
@@ -217,9 +188,7 @@ function handlePrints(handlePrints){
     const AMArray = [0,1,2,3,4,5,6,7,8,9,10,11];
     const period = AMArray.includes(timeofDay.hour) ? 'am' : 'pm';
     const icon = handlePrints.current.weather_icons;
-    // let iconImg = document.getElementById('icon');
-
-    //Hero Section
+ 
     let iconImg = document.createElement('img');
     
     iconImg.setAttribute('src', icon);
@@ -251,44 +220,11 @@ function handlePrints(handlePrints){
 
 
 
-    // const parentDiv = document.getElementById('down');
+   
+  
 
-    // // Cache child elements (assuming all have the same class)
-    // const childDivs = Array.from(parentDiv.querySelectorAll('.each-item'));
 
-    // // Cache frequently used elements within each child
-    // const elementsToCache = [
-    // 'temperature-two', 'wind-two', 'humidity-two', 'one', 'state-cloud',
-    // 'cloud-image', 'cloud-degree', 'wind-cloud', 'humidity-two'
-    // ];
 
-    // for (let i = 0; i < childDivs.length; i++) {
-    // const childDiv = childDivs[i];
-    // const cachedElements = {};
-
-    // // Cache elements only once per child
-    // for (const elementId of elementsToCache) {
-    //     // cachedElements[elementId] = childDiv.getElementById(elementId);
-    //     cachedElements[elementId] = childDiv.querySelector(`#${elementId}`); 
-    // }
-
-    // const { temperatureNew, windNew, humidityNew, hourTime, cloudStatus, imgContainer2, cloudDegree, windTwo, humidityTwo } = cachedElements;
-    // console.log(temperatureNew);
-    
-    // temperatureNew.textContent = `${tempV}`;
-    // windNew.textContent = `Wind: ${windmph}`;
-    // humidityNew.textContent = `Humidity: ${humidity}`;
-    // hourTime.textContent = `${timeofDay.hour}${period.toLocaleUpperCase()}`;
-    // cloudStatus.textContent = description;
-
-    // // Create and add image element
-    // const iconImgNew = document.createElement('img');
-    // iconImgNew.setAttribute('src', icon);
-    // iconImgNew.classList.add('icon-image');
-    // iconImgNew.setAttribute('id', `imgIcon${i}`); // Use a unique ID
-    // imgContainer2.appendChild(iconImgNew);
-    // imgContainer2.style.display = 'flex';
-    // }
 
     const parentDiv = document.getElementById('down');
 
